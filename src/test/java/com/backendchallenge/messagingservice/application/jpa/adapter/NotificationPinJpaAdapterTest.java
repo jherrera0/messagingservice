@@ -76,4 +76,28 @@ class NotificationPinJpaAdapterTest {
 
         assertTrue(result.isEmpty());
     }
+    @Test
+    void getPinByPhoneNumber_returnsPinIfExists() {
+        String phoneNumber = ConstTest.PHONE;
+        String pin = ConstTest.PIN_TEST;
+        NotificationPinEntity entity = new NotificationPinEntity();
+        entity.setPhoneNumber(phoneNumber);
+        entity.setPin(pin);
+
+        when(notificationPinRepository.findByPhoneNumber(phoneNumber)).thenReturn(Optional.of(entity));
+
+        String result = notificationPinJpaAdapter.getPinByPhoneNumber(phoneNumber);
+
+        assertEquals(pin, result);
+    }
+    @Test
+    void getPinByPhoneNumber_returnsEmptyStringIfNotExists() {
+        String phoneNumber = ConstTest.PHONE;
+
+        when(notificationPinRepository.findByPhoneNumber(phoneNumber)).thenReturn(Optional.empty());
+
+        String result = notificationPinJpaAdapter.getPinByPhoneNumber(phoneNumber);
+
+        assertEquals(null, result);
+    }
 }

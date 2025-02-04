@@ -27,7 +27,11 @@ public class NotificationPinJpaAdapter implements INotificationPersistencePort {
 
     @Override
     public Optional<String> findPinByPhoneNumber(String phoneNumber) {
-        return notificationPinRepository.findByPhoneNumber(phoneNumber)
-                .map(NotificationPinEntity::getPin);
+        return notificationPinRepository.findByPhoneNumber(phoneNumber).map(NotificationPinEntity::getPin);
+    }
+
+    @Override
+    public String getPinByPhoneNumber(String phoneNumber) {
+        return notificationPinRepository.findByPhoneNumber(phoneNumber).orElse(new NotificationPinEntity()).getPin();
     }
 }
