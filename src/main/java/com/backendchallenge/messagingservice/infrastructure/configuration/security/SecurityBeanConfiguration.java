@@ -1,4 +1,4 @@
-package com.backendchallenge.messagingservice.infrastructure.security;
+package com.backendchallenge.messagingservice.infrastructure.configuration.security;
 
 import com.backendchallenge.messagingservice.application.jwt.JwtService;
 import com.backendchallenge.messagingservice.application.jwt.MyUserDetailsService;

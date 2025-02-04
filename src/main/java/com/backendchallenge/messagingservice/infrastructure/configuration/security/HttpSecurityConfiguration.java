@@ -1,6 +1,6 @@
-package com.backendchallenge.messagingservice.infrastructure.security;
+package com.backendchallenge.messagingservice.infrastructure.configuration.security;
 
-import com.backendchallenge.messagingservice.infrastructure.security.filter.JwtAuthenticationFilter;
+import com.backendchallenge.messagingservice.infrastructure.configuration.security.filter.JwtAuthenticationFilter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

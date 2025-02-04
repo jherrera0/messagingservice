@@ -7,6 +7,7 @@ public class ConstJwt {
     public static final int LINESTRING_INDEX = 7;
     public static final String ID = "Id";
     public static final String HAS_AUTHORITY_EMPLOYEE = "hasAuthority('EMPLOYEE')";
+    public static final String SPLITERSTRING = " ";
 
     private ConstJwt() {
     }

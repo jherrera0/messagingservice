@@ -1,4 +1,4 @@
-package com.backendchallenge.messagingservice.infrastructure.security.filter;
+package com.backendchallenge.messagingservice.infrastructure.configuration.security.filter;
 
 import com.backendchallenge.messagingservice.domain.until.ConstJwt;
 import jakarta.servlet.FilterChain;
@@ -21,9 +21,9 @@ import java.io.IOException;
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
     private final UserDetailsService myUserDetailsService;
     @Override
-    protected void doFilterInternal(HttpServletRequest request,
-                                    @NonNull HttpServletResponse response,
-                                    @NonNull FilterChain filterChain)
+    public void doFilterInternal(HttpServletRequest request,
+                                 @NonNull HttpServletResponse response,
+                                 @NonNull FilterChain filterChain)
             throws ServletException, IOException {
         String authHeader = request.getHeader(ConstJwt.HEADER_STRING);
 

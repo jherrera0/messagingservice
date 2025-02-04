@@ -1,4 +1,4 @@
-package com.backendchallenge.messagingservice.infrastructure.security;
+package com.backendchallenge.messagingservice.infrastructure.configuration.security;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
