@@ -41,6 +41,16 @@ public class NotificationCase implements INotificationServicePort {
 
     }
 
+    @Override
+    public Boolean existPinByPhoneNumber(String phone) {
+        return notificationPersistencePort.findPinByPhoneNumber(phone).isPresent();
+    }
+
+    @Override
+    public String findPinByPhoneNumber(String phone) {
+        return notificationPersistencePort.getPinByPhoneNumber(phone);
+    }
+
     private String generatePin() {
         return String.format(PIN_FORMAT, random.nextInt(RANDOM_PARAMETER));
     }
