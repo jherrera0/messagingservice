@@ -19,6 +19,7 @@ public class ConstTest {
     public static final int ONE = 1;
     public static final String PHONE2 = "+5571981265132";
     public static final String PIN_TEST2 = "654321";
+    public static final String CREDENTIALS = "credentials";
 
 
     private ConstTest() {
