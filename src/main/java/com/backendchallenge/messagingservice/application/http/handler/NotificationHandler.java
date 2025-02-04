@@ -2,6 +2,8 @@ package com.backendchallenge.messagingservice.application.http.handler;
 
 import com.backendchallenge.messagingservice.application.http.dto.OrderReadyRequest;
 import com.backendchallenge.messagingservice.application.http.handler.interfaces.INotificationHandler;
+import com.backendchallenge.messagingservice.domain.api.INotificationServicePort;
+import com.backendchallenge.messagingservice.domain.until.TokenHolder;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +14,7 @@ public class NotificationHandler implements INotificationHandler {
 
     @Override
     public void sendNotification(OrderReadyRequest orderReadyRequest) {
+        TokenHolder.getToken();
         notificationServicePort.sendNotification(orderReadyRequest.getOrderId(), orderReadyRequest.getPhone());
     }
 }
