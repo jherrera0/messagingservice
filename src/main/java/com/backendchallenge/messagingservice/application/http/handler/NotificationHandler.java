@@ -17,4 +17,14 @@ public class NotificationHandler implements INotificationHandler {
         TokenHolder.getToken();
         notificationServicePort.sendNotification(orderReadyRequest.getOrderId(), orderReadyRequest.getPhone());
     }
+
+    @Override
+    public boolean existPinByPhoneNumber(String phone) {
+        return notificationServicePort.existPinByPhoneNumber(phone);
+    }
+
+    @Override
+    public String findPinByPhoneNumber(String phone) {
+        return notificationServicePort.findPinByPhoneNumber(phone);
+    }
 }

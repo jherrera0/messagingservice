@@ -4,4 +4,6 @@ import com.backendchallenge.messagingservice.application.http.dto.OrderReadyRequ
 
 public interface INotificationHandler {
     void sendNotification(OrderReadyRequest orderReadyRequest);
+    boolean existPinByPhoneNumber(String phone);
+    String findPinByPhoneNumber(String phone);
 }
