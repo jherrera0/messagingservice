@@ -59,8 +59,6 @@ dependencies {
 
 }
 
-def coverageExcludes = ['*/model/.*', '*/mappers/.*', '**.test']
-
 jacocoTestReport {
 	reports {
 		xml.required = true
@@ -68,7 +66,7 @@ jacocoTestReport {
 	}
 	afterEvaluate {
 		classDirectories.setFrom(files(classDirectories.files.collect {
-			fileTree(dir: it, exclude: coverageExcludes)
+			fileTree(dir: it)
 		}))
 	}
 }
