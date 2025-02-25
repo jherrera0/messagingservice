@@ -59,6 +59,13 @@ dependencies {
 
 }
 
+def coverageExcludes = ['*/dto/.*',
+						'*/domain/spi.*',
+						'*/domain/api.*',
+						'*/mappers/.*',
+						'*/repository/.*',
+						'**.test']
+
 jacocoTestReport {
 	reports {
 		xml.required = true
@@ -66,7 +73,7 @@ jacocoTestReport {
 	}
 	afterEvaluate {
 		classDirectories.setFrom(files(classDirectories.files.collect {
-			fileTree(dir: it)
+			fileTree(dir: it, exclude: coverageExcludes)
 		}))
 	}
 }
