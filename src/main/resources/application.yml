@@ -1,0 +1,29 @@
+server:
+  port: 8082
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/notification
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+app-description: "Notification User Manager"
+app-version: "1.0.0"
+app-security-key: "my-secret-key-for-generate-token"
+
+twilio:
+ auth-token: "ca58dfc26d1585a4f4f1ca61233e6051"
+ account-sid: "AC0b45682981e781be7e84081d5a37b0fa"
+ phone-number: "+16893367608"
+
+
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    path: /auth/swagger-ui.html
+    enabled: true
